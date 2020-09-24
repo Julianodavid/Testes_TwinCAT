@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="MAIN" Id="{3b675737-7f6c-49a3-a1dd-a3da347b455c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	
+FB_TON_01 : TON ;  															// DECLARAÇÃO TON 01 
+
+
+Botao_In        : BOOL ;													//	Inicio do Tempo 	
+Botao_Out       : BOOL ; 													//	Saída Ativa quando o tempo for alcançado 	
+T_Presete_Time  : TIME := T#120S ;											//	Valoe que o bloco deve alcançar 
+T_Elapse_Time   : TIME ; 													//	Tempo decorrido desde a ativação 
+	
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FB_TON_01 (IN:= Botao_In, PT:= T_Presete_Time, Q=> Botao_Out, ET => T_Elapse_Time);  
+
+
+
+
+ 
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="25" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
